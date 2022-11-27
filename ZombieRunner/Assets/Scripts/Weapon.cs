@@ -9,6 +9,10 @@ public class Weapon : MonoBehaviour
     [SerializeField] float range;
     [SerializeField] int damage = 30;
     [SerializeField] ParticleSystem muzzleFlash;
+
+    //stores the spark effect game object: explosion
+    [SerializeField] GameObject hitEffect;
+
     void Update()
     {
         if(Input.GetButtonDown("Fire1"))
@@ -33,6 +37,7 @@ public class Weapon : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(FPCamera.transform.position, FPCamera.transform.forward, out hit, range))
         {
+            CreateHitImpact(hit);
             Debug.Log($"I hit this {hit.transform.name}");
             EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
 
@@ -46,5 +51,14 @@ public class Weapon : MonoBehaviour
         {
             return;
         }
+    }
+
+    private void CreateHitImpact(RaycastHit hit)
+    {
+        GameObject hitEff;
+        hitEff = Instantiate(hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
+        //time for which we need the spark to be there 
+        var hitEffectTime = 0.1f;
+        Destroy(hitEff, hitEffectTime);
     }
 }
