@@ -9,13 +9,14 @@ public class Weapon : MonoBehaviour
     [SerializeField] float range;
     [SerializeField] int damage = 30;
     [SerializeField] ParticleSystem muzzleFlash;
+    [SerializeField] Ammo ammoSlot;
 
     //stores the spark effect game object: explosion
     [SerializeField] GameObject hitEffect;
 
     void Update()
     {
-        if(Input.GetButtonDown("Fire1"))
+        if(Input.GetButtonDown("Fire1") && ammoSlot.GetCurrentAmmo()>0)
         {
             Shoot();
         }
@@ -24,6 +25,7 @@ public class Weapon : MonoBehaviour
     {
         PlayMuzzleFlash();
         ProcessRaycast();
+        ammoSlot.ReduceCurrentAmmo();
     }
 
     private void PlayMuzzleFlash()
