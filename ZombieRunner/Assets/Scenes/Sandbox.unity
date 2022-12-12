@@ -5191,6 +5191,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 2b127815fd0f2074eae3a0c6a4786d0b, type: 3}
   m_PrefabInstance: {fileID: 1087874126}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1092493313 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6946240305276605222, guid: 845bb9a13b0664a858c5c12979801014, type: 3}
+  m_PrefabInstance: {fileID: 6635924300284867263}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1092493315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092493313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9052581cec21b4ec1b5b777cbbb5c85b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentWeapon: 0
 --- !u!1001 &1096230243
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9576,6 +9594,10 @@ PrefabInstance:
       propertyPath: gameOverCanvas
       value: 
       objectReference: {fileID: 56206511}
+    - target: {fileID: 6617887230785014389, guid: 845bb9a13b0664a858c5c12979801014, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6635924300138346403, guid: 845bb9a13b0664a858c5c12979801014, type: 3}
       propertyPath: m_RootOrder
       value: 1
