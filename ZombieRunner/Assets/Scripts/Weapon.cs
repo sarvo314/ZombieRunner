@@ -10,22 +10,31 @@ public class Weapon : MonoBehaviour
     [SerializeField] int damage = 30;
     [SerializeField] ParticleSystem muzzleFlash;
     [SerializeField] Ammo ammoSlot;
+    bool canShoot;
+    [SerializeField] float timeBwShots = 1f;
 
     //stores the spark effect game object: explosion
     [SerializeField] GameObject hitEffect;
+    private void Start()
+    {
+        canShoot = true;
+    }
 
     void Update()
     {
-        if(Input.GetButtonDown("Fire1") && ammoSlot.GetCurrentAmmo()>0)
+        if(Input.GetMouseButton(0) && ammoSlot.GetCurrentAmmo()>0 && canShoot)
         {
-            Shoot();
+            StartCoroutine(Shoot());
         }
     }
-    void Shoot()
+    IEnumerator Shoot()
     {
+        canShoot = false;
         PlayMuzzleFlash();
         ProcessRaycast();
         ammoSlot.ReduceCurrentAmmo();
+        yield return new WaitForSeconds(timeBwShots);
+        canShoot = true;
     }
 
     private void PlayMuzzleFlash()

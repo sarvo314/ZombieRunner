@@ -9624,10 +9624,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 6635924300609804524, guid: 845bb9a13b0664a858c5c12979801014, type: 3}
-      propertyPath: zoomedInFOV
-      value: 53.81
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 845bb9a13b0664a858c5c12979801014, type: 3}
