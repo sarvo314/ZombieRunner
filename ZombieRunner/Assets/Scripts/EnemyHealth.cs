@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-     int hitPoints = 100;
+    int hitPoints = 100;
 
     public int GetHealth()
     {

@@ -4,17 +4,22 @@ using UnityEngine;
 
 public class WeaponSwitcher : MonoBehaviour
 {
+    WeaponZoom zoomWeapon;
     [SerializeField] int currentWeapon = 0;
     void Start()
     {
+        zoomWeapon = FindObjectOfType<WeaponZoom>();
         SetWeaponActive();
     }
     private void Update()
     {
         int previousWeapon = currentWeapon;
         ProcessKeyInput();
+        ProcessMouseScrollWheel();
         if(previousWeapon != currentWeapon)
         {
+            //zoom out if weapon switch
+            zoomWeapon.CamToggle();
             SetWeaponActive();
         }
     }

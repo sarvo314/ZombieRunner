@@ -6,17 +6,21 @@ public class WeaponZoom : MonoBehaviour
 {
     [SerializeField] Camera fpsCamera;
     [SerializeField] float zoomedInFOV;
-    [SerializeField] float zoomedOutFOV;
+    [SerializeField] float zoomedOutFOV = 62f;
     [SerializeField] float zoomedInSensitivity;
-    [SerializeField] float zoomedOutSensitivity;
+    [SerializeField] float zoomedOutSensitivity = 23f;
 
     RigidbodyFirstPersonController fpsController;
 
-    bool zoomedIn;
+    public static bool zoomedIn;
+
     private void Start()
     {
         //fpsCamera = GetComponent<Camera>();
+        fpsController = FindObjectOfType<RigidbodyFirstPersonController>();
         zoomedIn = false;
+
+        //zoomedOutFOV = 62f;
     }
 
     // Update is called once per frame
@@ -34,7 +38,7 @@ public class WeaponZoom : MonoBehaviour
             }
         }
     }
-    void CamToggle(float zoom, float sensitivity)
+    public void CamToggle(float zoom = 92f, float sensitivity = 5.7f)
     {
         zoomedIn = !zoomedIn;
         fpsCamera.fieldOfView = zoom;

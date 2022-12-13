@@ -6,7 +6,7 @@ public class EnemyAI : MonoBehaviour
 {
     
     [SerializeField] Transform target;
-    public static float chaseRange = 5;
+    public static float chaseRange = 500;
 
     NavMeshAgent navMeshAgent;
     float distanceToTarget = Mathf.Infinity;

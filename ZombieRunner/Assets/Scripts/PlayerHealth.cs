@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    float hitPoints = 100;
+    [SerializeField]float hitPoints = 1000;
     DeathHandler deathHandle;
     private void Start()
     {
