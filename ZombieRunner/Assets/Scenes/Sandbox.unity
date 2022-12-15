@@ -800,9 +800,9 @@ Transform:
   - {fileID: 66691263}
   - {fileID: 974611556}
   - {fileID: 2077870554}
+  - {fileID: 1734659437}
   - {fileID: 1087874127}
   - {fileID: 657710236}
-  - {fileID: 1734659437}
   - {fileID: 116893774}
   - {fileID: 268242909}
   m_Father: {fileID: 0}
@@ -3421,7 +3421,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6635924300145303141, guid: 845bb9a13b0664a858c5c12979801014, type: 3}
       propertyPath: advancedSettings.airControl
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6635924300145303141, guid: 845bb9a13b0664a858c5c12979801014, type: 3}
       propertyPath: movementSettings.RunMultiplier

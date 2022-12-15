@@ -5,7 +5,12 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     int hitPoints = 100;
+    public static bool isDead;
 
+    private void Awake()
+    {
+        isDead = false;
+    }
     public int GetHealth()
     {
         return hitPoints;
@@ -18,8 +23,16 @@ public class EnemyHealth : MonoBehaviour
         hitPoints -= damage;
         if(hitPoints <= 0)
         {
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
+            Die();
             return;
         }
+    }
+    void Die()
+    {
+        if (isDead) return;
+        isDead = true;
+        GetComponent<Animator>().SetTrigger("death");
+
     }
 }

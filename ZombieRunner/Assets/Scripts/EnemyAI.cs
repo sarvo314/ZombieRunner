@@ -21,8 +21,11 @@ public class EnemyAI : MonoBehaviour
 
     void Update()
     {
-        distanceToTarget = Vector3.Distance(target.position, transform.position);
-        MoveEnemy(distanceToTarget);
+        if(!EnemyHealth.isDead)
+        {
+            distanceToTarget = Vector3.Distance(target.position, transform.position);
+            MoveEnemy(distanceToTarget);
+        }    
     }
     void MoveEnemy(float distanceToTarget)
     {
